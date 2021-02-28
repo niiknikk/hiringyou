@@ -1,0 +1,17 @@
+.company-logo{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    &-left{
+        img{
+            height: 15rem;
+            width: 15rem;
+            }
+        }
+
+    @include respond(tab-port){
+        height: 12vh;
+    }
+}

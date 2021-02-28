@@ -1,0 +1,117 @@
+.demo{
+    font-family: $ff-lato;
+    background: linear-gradient(15deg,#439cfba6 50%, #439cfbe1 50.1%);
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+    padding-bottom: 5rem;
+    
+    &-content{
+        padding: 2rem;
+    }
+    .demo-container{
+        padding: 1rem 2rem;
+        background-color: rgba(255, 255, 255, 0.25);
+    /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* For the fog-like glass effect */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    width: 40rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3) ;
+}
+.h-text{
+    text-align: center;
+    margin-top: 10px;
+    color: #222;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+.form{
+    padding: 1.5rem 1.5rem;
+}
+
+.form-control{
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+    }
+.form-control label{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #222;
+}
+
+.form-control input{
+    position: relative;
+    display: block;
+    width: 100%;
+    /* background: linear-gradient( rgba(255,255,255,0.7),rgba(255,255,255,0.2)); */
+    background-color: #ecf0f3;
+    box-shadow: inset 6px 6px 6px #cbced1;
+    box-shadow: inset -6px -6px -6px #fff;
+    border: 1px solid #777;
+    border-radius: 100px;
+    padding: 10px;
+    margin: 5px 0px;
+    font-size: 16px;
+}
+
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: #e74c3c;
+}
+.form-control small{
+    font-size: 1.4rem;
+    color: #e74c3c;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+.form-control.error small{
+    visibility: visible;
+}
+
+.form-btn{
+    cursor: pointer;
+    /* background-color: #3498db; */
+    /* background-color: #fff;
+    background: linear-gradient(to right top, rgba(255,255,255,0.7),rgba(255,255,255,0.3)); */
+    /* border: 2px solid #3498db; */
+    /* border: 1px solid #fff; */
+    background-color: #ecf0f3cb;
+    box-shadow: inset 6px 6px 6px #cbced1;
+    box-shadow: inset -6px -6px -6px #fff;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    color: #111;
+    font-size: 18px;
+    transition: transform 0.2s;
+
+    
+}
+
+.form-btn:focus{
+    outline: none;   
+}
+.form-btn:active{
+    transform: scale(0.97);
+}
+}

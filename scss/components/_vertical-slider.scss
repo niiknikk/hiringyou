@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// body{
+//     height: 100vh;
+// }
+
+.slide-container{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 94.4vw;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.left-slide{
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide > div{
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    @include respond(tab-port){
+        text-align: center;
+    }
+}
+
+.left-slide h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
+}
+.left-slide p{
+    font-size: 1.8rem;
+    margin-right: 5rem;
+}
+
+.right-slide{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    transition: transform 0.5s ease-in-out;
+
+        &-bg1{
+            background-image: url("/image/v-slider-\ \(3\).jpg");
+        }
+        &-bg2{
+            background-image: url("/image/bulk\ interviw.png");
+        }
+        &-bg3{
+            background-image: url("/image/v-slider-\ \(5\).jpg");
+        }
+        &-bg4{
+            background-image: url("/image/v-slider-\ \(1\).jpg");
+        }
+        &-bg5{
+            background-image: url("/image/v-slider-\ \(2\).jpg");
+        }
+}
+
+.right-slide > div{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    border: none;
+    outline: none;
+}
+button:hover{
+    color: #222;
+}
+
+.slide-container .action-buttons button{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    z-index: 100;
+}
+
+.slide-container .action-buttons .down-button{
+    transform: translateX(-100%);
+
+    border-radius: 5px 0 0 5px;
+
+    @include respond(tab-port){
+
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+.slide-container .action-buttons .up-button{
+    transform: translateY(-100%);
+    border-radius: 0 5px 5px 0;
+    // @include respond(tab-port){
+    //     bottom: 1%;
+    //     right: 1%;
+    //     transform: translateX(0%);
+    // }    
+}
+
+
+.split-left .action-buttons button{
+        top: 0%;
+        left: 10%;
+}
+@include respond(tab-port){
+.split-left .left-slide {
+    width: 100%;
+}
+.split-left .right-slide {
+    width: 0%;
+}
+}

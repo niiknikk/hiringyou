@@ -1,0 +1,33 @@
+.section-a{
+    padding-top: 2rem;
+    &-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respond(tab-port){
+            flex-direction: column;
+        }
+
+        &-left{
+            margin: 1.5rem 1.5rem;
+        
+            @include respond(phone){
+                margin: 3rem 4rem;
+                // width: 95%;
+                h2{
+                    text-align: left;
+                }
+            }
+        }
+        &-right{
+            width: 100%;
+            img{
+                height: 40rem;
+                @include respond(tab-port){
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
