@@ -1,36 +1,4 @@
-// @import url(//cdn.rawgit.com/rtaibah/dubai-font-cdn/master/dubai-font.css);
 
-
-// *,
-// *:after,
-// *:before {
-//     margin: 0;
-//     padding: 0;
-//     -webkit-box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     -ms-box-sizing: border-box;
-//     -o-box-sizing: border-box;
-//     box-sizing: border-box;
-//     -webkit-user-select: none;
-//     -ms-user-select: none;
-//     -o-user-select: none;
-//     -moz-user-select: none;
-//     user-select: none;
-//     cursor: default;
-// }
-
-// html {
-//     width: 100%;
-//     height: auto;
-// }
-
-// body {
-//     width: 100%;
-//     height: auto;
-//     font-size: 16px;
-//     font-family: inherit;
-// 	background: rgba(30,30,30);
-// }
 
 .section-review{
     position: relative;
@@ -40,8 +8,8 @@
     font-family: inherit;
     color: #222;
     padding: 2rem;
-    // background: linear-gradient(to bottom right, $color-primary-blue-dark, $color-primary-blue-dark-light);
     background-color: #fff;
+    background: linear-gradient(to bottom right, rgba(255,255,255, 0.8),rgba(255,255,255, 0.4)),url(../../svg/light.svg);
 }
 .testim {
 		width: 100%;

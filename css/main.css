@@ -521,8 +521,8 @@ li {
   width: 100%;
   position: relative;
   height: 95vh;
-  background: -webkit-gradient(linear, left top, right bottom, from(#4e54c88c), to(#8f94fb60)), url("/image/headerr.png");
-  background: linear-gradient(to right bottom, #4e54c88c, #8f94fb60), url("/image/headerr.png");
+  background: -webkit-gradient(linear, left top, right bottom, from(#4e54c88c), to(#8f94fb60)), url("../../svg/bg-header.svg");
+  background: linear-gradient(to right bottom, #4e54c88c, #8f94fb60), url("../../svg/bg-header.svg");
   background-position: top;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
@@ -771,6 +771,8 @@ li {
   color: #222;
   padding: 2rem;
   background-color: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.4))), url(../../svg/light.svg);
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)), url(../../svg/light.svg);
 }
 
 .testim {
@@ -1462,8 +1464,8 @@ button:hover {
 
 .footer {
   font-family: inherit;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#4e54c8), to(#4e54c88c));
-  background-image: linear-gradient(to right bottom, #4e54c8, #4e54c88c);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#8f94fb), to(#8f94fb60)), url(../../svg/footer.svg);
+  background-image: linear-gradient(to right bottom, #8f94fb, #8f94fb60), url(../../svg/footer.svg);
   padding: 2rem;
   font-size: 1.6rem;
   color: #fff;

@@ -1,7 +1,8 @@
 
 .footer{
   font-family: inherit;
-  background-image: linear-gradient(to right bottom, $color-primary-blue, $color-primary-blue-op);
+  background-image: linear-gradient(to right bottom, $color-primary-blue-light, $color-primary-blue-light-op), url(../../svg/footer.svg);
+  // background: url(../../svg/footer.svg);
   padding: 2rem;
   font-size: 1.6rem;
   color: #fff;
