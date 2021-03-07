@@ -362,32 +362,66 @@ li {
   margin: 0 auto;
 }
 
-.navigation {
-  overflow-x: hidden;
-}
-
-.navigation-checkbox {
-  display: none;
-}
-
-.navigation-checkbox:checked ~ .navigation-background {
-  -webkit-transform: scale(80);
-          transform: scale(80);
-}
-
-.navigation-checkbox:checked ~ .navbar {
-  width: 100%;
-  opacity: 1;
-}
-
-.navigation-button {
-  cursor: pointer;
-  height: 6rem;
-  width: 6rem;
-  background-color: #f7f7f7;
+.menu-wrap {
   position: fixed;
-  top: 3rem;
-  right: 5rem;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  z-index: 2;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div::before, .menu-wrap .toggler:checked + .hamburger > div::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-duration: 0.75s;
+          transition-duration: 0.75s;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s ease 0.4s;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  z-index: 1;
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+  background-color: #4e4eda;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,29 +432,38 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
-.navigation-background {
-  position: fixed;
-  height: 6rem;
-  width: 6rem;
-  top: 3rem;
-  right: 5rem;
-  border-radius: 50%;
-  z-index: 100;
-  background-image: radial-gradient(#4e54c8, #8f94fb);
-  -webkit-transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 70%;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-.navigation .navbar {
-  height: 100vh;
+.menu-wrap .hamburger > div::before, .menu-wrap .hamburger > div::after {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  width: 100%;
+  height: 2px;
+  background-color: inherit;
+}
+
+.menu-wrap .hamburger > div::after {
+  top: 1rem;
+}
+
+.menu-wrap .menu {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -430,91 +473,67 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 0;
-  opacity: 0;
-  z-index: 150;
-  -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.navigation-list {
+.menu-wrap .menu > div {
+  background: rgba(45, 45, 218, 0.562);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
   text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
   list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
 
-.navigation-item {
-  margin-top: 1rem;
-}
-
-.navigation-link {
+.menu-wrap .menu > div > div > ul > li > a {
   text-transform: uppercase;
   display: inline-block;
   color: #f7f7f7;
   text-decoration: none;
   font-size: 2.5rem;
   padding: 0.5rem 3rem;
+  -webkit-transition: color 0.4s ease;
+  transition: color 0.4s ease;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #f7f7f7 50%);
   background-size: 230%;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
-.navigation-link:hover, .navigation-link:active {
+.menu-wrap .menu > div > div > ul > li > a:hover, .menu-wrap .menu > div > div > ul > li > a:active {
   -webkit-transform: translateX(1rem);
           transform: translateX(1rem);
   background-position: 100%;
   color: #4e54c8;
-}
-
-.navigation-icon {
-  position: relative;
-}
-
-.navigation-icon, .navigation-icon::before, .navigation-icon::after {
-  left: 0;
-  height: 2px;
-  width: 2.8rem;
-  background-color: #333;
-  display: inline-block;
-}
-
-.navigation-icon::before, .navigation-icon::after {
-  content: "";
-  position: absolute;
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear;
-}
-
-.navigation-icon::before {
-  top: -0.8rem;
-}
-
-.navigation-icon::after {
-  top: 0.7rem;
-}
-
-.navigation-button:hover .navigation-icon::before {
-  top: -1rem;
-}
-
-.navigation-button:hover .navigation-icon::after {
-  top: 1rem;
-}
-
-.navigation-checkbox:checked + .navigation-button .navigation-icon {
-  background-color: transparent;
-}
-
-.navigation-checkbox:checked + .navigation-button .navigation-icon::before {
-  top: 0;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-}
-
-.navigation-checkbox:checked + .navigation-button .navigation-icon::after {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-  top: 0;
 }
 
 .header {
@@ -1152,9 +1171,9 @@ li {
 @media only screen and (max-width: 56.25em) {
   .showcase {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1187,6 +1206,7 @@ li {
 @media only screen and (max-width: 56.25em) {
   .questions {
     padding: 0;
+    margin-top: 2rem;
   }
 }
 
