@@ -478,8 +478,8 @@ li {
 .menu-wrap .menu > div {
   background: rgba(45, 45, 218, 0.562);
   border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 300vw;
+  height: 300vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
